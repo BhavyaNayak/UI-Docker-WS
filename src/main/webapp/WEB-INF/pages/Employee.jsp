@@ -45,7 +45,9 @@
 </tr>
 <tr>
     <td><b>Gender</b></td>
-    <td><b><input type="text" class="a4"></b></td>
+    <td><input type="radio" name="sex" value="Male" class="a4">Male
+		<input type="radio" name="sex" value="Female" class="a4">Female
+	</td>
 </tr>
 <tr>
     <td><b>Manager</b></td>

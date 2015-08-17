@@ -10,12 +10,12 @@ $(document).ready(function() {
              var txt = "";
              if(length > 0){
                  for(var i=0;i<length;i++){
-                	 if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
+                	// if(employeesData._embedded.employees[i].name && employeesData._embedded.employees[i].age && employeesData._embedded.employees[i].employeeNumber && employeesData._embedded.employees[i].gender  && employeesData._embedded.employees[i].managerName && employeesData._embedded.employees[i].designation){
                         var empNumber = employeesData._embedded.employees[i]._links.self.href;                       
                          txt += "<tr id='rowId'><td>"+employeesData._embedded.employees[i].name+"</td><td>"+employeesData._embedded.employees[i].age+"</td><td>"+employeesData._embedded.employees[i].employeeNumber+"</td><td>"+employeesData._embedded.employees[i].gender+"</td><td>"+employeesData._embedded.employees[i].managerName+"</td><td>"+employeesData._embedded.employees[i].designation+"</td><td id='empCell'><input type='button' value='Delete'></input></td><td class='editEmp' id='editemp'><input type='submit' value='Edit'></input></td></tr>";
                 		 txt = txt.replace('empCell',empNumber);   
                 		 txt = txt.replace('rowId',empNumber);
-                       	 }
+                    //   	 }
                  }
                  if(txt != ""){
                      $("#tblData").append(txt);
@@ -34,7 +34,7 @@ $(document).ready(function() {
 			 	  dataType: 'json', 
 			 	  type: 'post', 
 			 	  contentType: 'application/json', 
-			 	  data: JSON.stringify( { "name": $('.a1').val(), "age": $('.a2').val(), "employeeNumber": $('.a3').val(), "gender": $('.a4').val(), "managerName": $('.a5').val(), "designation": $('.a6').val() } ),
+			 	  data: JSON.stringify( { "name": $('.a1').val(), "age": $('.a2').val(), "employeeNumber": $('.a3').val(), "gender": $('.a4:checked').val(), "managerName": $('.a5').val(), "designation": $('.a6').val() } ),
 			 	  processData: false, 
 			 	  success: function( data, textStatus, jQxhr ){   }, 
 			 	  error: function( jqXhr, textStatus, errorThrown ){  } });
@@ -111,10 +111,28 @@ location.reload(true);
 	    var inputVal = $(this).val();
 	    var numericReg = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
 	    if(!numericReg.test(inputVal)) {
-	        $(this).after('<div class="error error-keyup-1">Numeric characters only.</div>');
+	        $(this).after('<span class="error error-keyup-1">Numeric characters only.</span>');
 	    }
 	});
- 
+ $('.a1,.a2,.a3,.a4,.a5').blur(function()          
+		 {        
+	 		$('span.err').hide();
+		     if( !$(this).val() ) {                      //if it is blank. 
+		    	 $(this).after('<span class="err">Can not be Empty.</span>');  
+		     }
+		 });
+	 $('#registerEmp').prop('disabled', true);
+	 $('.a1.a2.a3.a4.a5,.a6').keyup(function() {
+	    if($(this).val() != '') {
+	       $('#registerEmp').prop('disabled', false);
+	    }
+	 });
+	 $('#updateEmp').prop('disabled', true);
+	 $('.a1,.a2,.a3,.a5,.a6').keyup(function() {
+	    if($(this).val() != '') {
+	       $('#updateEmp').prop('disabled', false);
+	    }
+	 });
  
  });//.ready
 
