@@ -1,0 +1,24 @@
+#  Dont use not working
+general:  
+  artifacts:
+    - /home/ubuntu/docker-ws/target/
+    
+test:
+  override:
+     - mvn integration-test
+
+## Customize deployment commands
+#deployment:
+#  aws:
+#  branch: master
+#  commands:
+#    - /bin/bash publish.sh
+#    s3_location:
+#      bucket: span-cloud-coe-ilan
+
+deployment:
+  production: # just a label; label names are completely up to you
+    branch: master
+    commands:
+      - aws s3 cp /home/ubuntu/docker-ws/target/span-employee-1.1.5.RELEASE.jar s3://span-cloud-coe-ilan/
+
