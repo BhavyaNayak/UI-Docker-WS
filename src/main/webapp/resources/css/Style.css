@@ -10,6 +10,7 @@ body {
 		border:0;
 		margin:0px auto;
 		width:100%;
+		position: relative;
 	}
 	
 .header {
@@ -20,6 +21,9 @@ body {
 .Container{
 	background:#F4F4F5;
 	padding:10px;
+	height:700px;
+	overflow-y:scroll;
+	position: relative;
 }
 #Logo {
    
@@ -66,7 +70,21 @@ body {
     width: 100%;
 }
 
-.Button{
+.Button,#DeleteNo,#DeleteYes{
 	background: #148E76;
 	color: white;
+}
+
+.Notify{
+	border: 1px solid black;
+    left: 500px;
+    position: absolute;
+    top: 100px;
+    Padding:10px;
+    background: #E0E0E0;
+}
+
+#DeleteHeader{
+	border-bottom:1px solid black;
+	font-weight: bold;
 }

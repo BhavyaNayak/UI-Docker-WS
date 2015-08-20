@@ -6,7 +6,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>List Of Employees</title>
- 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/Style.css" />">
+ 		<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css" />">
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  		<script src="<c:url value="/resources/js/main.js" />"></script>
 	</head>
@@ -14,7 +14,7 @@
 		<div class="wrpr">
 			<div class="header">
 				<header>
-	    			<img class="img-responsive" id="Logo" src="<c:url value="/resources/Images/Span.jpg" />" alt="Logo">
+	    			<img class="img-responsive" id="Logo" src="<c:url value="/resources/images/span.jpg" />" alt="Logo">
 	  			</header>
 	  		</div>
 	  		<div class="Container">
@@ -33,6 +33,14 @@
 	    				</tr>
 					</table>
 					<button id="btnadd">&#9769; Add New Employee</button>
+				</div>
+				
+	<!-- Alert box -->
+				<div class="Notify" style="display:none" >
+					<p id="DeleteHeader">Delete Entry?</p>
+					<p>Are you sure you want to delete this entry?</p>
+					<input type="button" value="No" id="DeleteNo">
+					<input type="button" value="Yes" id="DeleteYes">
 				</div>
 	
 	<!-- Register new employee -->
@@ -72,7 +80,7 @@
 	<!-- Edit Employee -->
 				<div class="editEmployee" style="display:none" >
 				<p class="TableHeader">Edit Employee</p>
-					<table>
+					<table id="EditTable">
 						<tr>
 						    <td><b>Employee Name</b></td>
 						    <td><input type="text" id='editEmpName' class="EmpName"></td>
