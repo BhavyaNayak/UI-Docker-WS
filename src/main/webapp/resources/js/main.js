@@ -181,20 +181,15 @@ location.reload(true);
 	 
 	 window.onresize=load;
 	 window.onload=load;
-
 	 function load()
 	 {
-	 var h=window.innerHeight;
-
-	 var e1=document.querySelector(".header");
-	 var e2=e1.offsetHeight;
-
-	 var f1=document.querySelector(".Footer");
-	 var f2=f1.offsetHeight;
-
-	 var q=document.querySelector(".Container");
-	 q.style.height=h-(e2+f2);
-
+		 var InnerHeight=window.innerHeight;
+		 var HeaderSecletor=document.querySelector(".header");
+		 var Headeroffsetheight=HeaderSecletor.offsetHeight;
+		 var FooterSecletor=document.querySelector(".Footer");
+	 	var Footeroffsetheight=FooterSecletor.offsetHeight;
+	 	var ContainerSelector=document.querySelector(".Container");
+	 	ContainerSelector.style.height=InnerHeight-(Headeroffsetheight+Footeroffsetheight);
 	 }
 	 
  
