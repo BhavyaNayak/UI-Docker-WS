@@ -16,6 +16,7 @@ body {
 .header {
     background: #fff none repeat scroll 0 0;
      border-bottom: 1px solid #ebccd1;
+     height:auto;
 }
 
 .Container{
@@ -60,13 +61,10 @@ body {
 
 .Footer{
 	background-color: #e0e0e0;
-    bottom: 0;
+   	height:auto;
     color: grey;
     font-size: 15px;
-    height: 25px;
-    left: 0;
     padding: 10px;
-    position: fixed;
     width: 100%;
 }
 
