@@ -22,7 +22,7 @@ body {
 .Container{
 	background:#F4F4F5;
 	padding:10px;
-	height:700px;
+	height:550px;
 	overflow-y:scroll;
 	position: relative;
 }

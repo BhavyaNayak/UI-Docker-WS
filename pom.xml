@@ -63,6 +63,14 @@
 			<artifactId>jstl</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- Hot Deploy -->
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+            <version>1.2.0.RELEASE</version>
+        </dependency>
+		
 
     </dependencies>
     <!-- added one comment new comment added-->
