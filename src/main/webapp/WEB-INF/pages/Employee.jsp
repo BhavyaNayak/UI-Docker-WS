@@ -75,6 +75,7 @@
 						</tr>
 					</table>
 					<button type="button" id="registerEmp">Add Employee</button>
+					<button type="button" class="cancelregisterEmp">Cancel</button>
 				</div>
 	
 	<!-- Edit Employee -->
@@ -108,6 +109,7 @@
 						</tr>
 					</table>
 					<button id="updateEmp">Update</button>
+					<button type="button" class="cancelregisterEmp">Cancel</button>
 				</div>
 			</div><!-- container -->
 			<div class="Footer">
